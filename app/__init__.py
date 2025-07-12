@@ -16,7 +16,9 @@ def create_app():
     db.init_app(app)
     
     # Import models (important for migrations)
-    # from app.models import ...
+    from app.models.users import User
+    from app.models.listing import Listing
+    from app.models.swaps import SwapRequest
     
     # Import Routes
     # eg: from .routes.home import home
