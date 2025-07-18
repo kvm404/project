@@ -77,12 +77,10 @@ class Listing(db.Model):
         }
     
     def approve(self):
-        """Approve the listing"""
         self.is_approved = True
         db.session.commit()
     
     def mark_as_swapped(self):
-        """Mark item as swapped"""
         self.status = 'Swapped'
         self.is_available = False
         db.session.commit()
