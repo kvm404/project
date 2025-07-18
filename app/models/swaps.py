@@ -55,19 +55,16 @@ class SwapRequest(db.Model):
         }
     
     def accept(self):
-        """Accept the swap request"""
         self.status = 'Accepted'
         self.updated_at = datetime.utcnow()
         db.session.commit()
     
     def reject(self):
-        """Reject the swap request"""
         self.status = 'Rejected'
         self.updated_at = datetime.utcnow()
         db.session.commit()
     
     def cancel(self):
-        """Cancel the swap request"""
         self.status = 'Cancelled'
         self.updated_at = datetime.utcnow()
         db.session.commit()
